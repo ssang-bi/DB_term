@@ -1,0 +1,29 @@
+<html>
+<head>
+    <title>지금까지 사용한 비용</title>
+</head>
+<body>
+    <h1>지금까지 사용한 비용</h1>
+    <table border=1>
+        <thead>
+            <tr>
+                <th>사용 금액</th>
+                <th>정가 합계</th>
+                <th>아낀 금액</th>
+                <th>이득 비율</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in item_list%}
+            <tr>
+                <td>{{i[0]}}원</td>
+                <td>{{i[1]}}원</td>
+                <td>{{i[2]}}원</td>
+                <td>{{i[3]}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>      
+    </table>
+    <a href="/">처음으로</a>
+</body>
+</html>

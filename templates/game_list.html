@@ -1,0 +1,48 @@
+<html>
+<head>
+    <title>게임 구매 목록</title>
+</head>
+<body>
+    <h1>게임 구매 목록</h1><br>
+    <div>
+        <input type="button" value="추가" onclick="location.href='/add_game'">
+        <input type="button" value="지금까지 쓴 비용" onclick="location.href='/sum_amount'">
+    </div><br>
+    <table border=1>
+        <thead>
+            <tr>
+                <th>구매 날짜</th>
+                <th>이름</th>
+                <th>장르</th>
+                <th>구매 가격</th>
+                <th>제작사</th>
+                <th>사용자 평점</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% if item_list %}
+                {% for i in item_list %}
+                <tr>
+                    <td><a href="/game_date/{{ i[0] }}">{{ i[0] }}</a></td>
+                    <td><a href="/game_info/{{ i[1] }}/{{ i[6] }}">{{ i[1] }}</a></td>
+                    <td><a href="/game_genre/{{ i[2] }}">{{ i[2] }}</a></td>
+                    <td>{{ i[3] }}원</td>
+                    <td><a href="/game_developer/{{ i[4] }}">{{ i[4] }}</a></td>
+                    <td>
+                        {% if i[5] == None %}
+                            None
+                        {% else %}
+                            {{ i[5] }}점
+                        {% endif %}
+                    </td>
+                </tr>
+                {% endfor %}
+            {% else %}
+                <tr>
+                    <td colspan="6">구매한 게임이 없습니다.</td>
+                </tr>
+            {% endif %}
+        </tbody>
+    </table>
+</body>
+</html>

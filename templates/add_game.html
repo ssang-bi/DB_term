@@ -1,0 +1,24 @@
+<html>
+    <head>
+        <title>구매 게임 추가</title>
+    </head>
+    <body>
+        <h1>구매 게임 추가</h1>
+        <form method="POST" action="/add_game">
+            <label for="game_name">게임 이름:</label>
+            <input type="text" id="game_name" name="game_name"><br><br>
+            <label for="game_genre">게임 장르:</label>
+            <input type="text" id="game_genre" name="game_genre"><br><br>
+            <label for="purchase_price">구매 가격:</label>
+            <input type="number" id="purchase_price" name="purchase_price"><br><br>
+            <label for="game_price">정가:</label>
+            <input type="number" id="game_price" name="game_price"><br><br>
+            <label for="developer_name">제작사:</label>
+            <input type="text" id="developer_name" name="developer_name"><br><br>
+            <label for="purchase_date">구매 날짜:</label>
+            <input type="date" id="purchase_date" name="purchase_date"><br><br>
+            <input type="submit" value="저장">
+        </form>
+        <a href="/">처음으로</a><br>
+    </body>
+</html>

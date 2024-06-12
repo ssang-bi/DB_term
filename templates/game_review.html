@@ -1,0 +1,16 @@
+<html>
+<head>
+    <title>평점 및 후기</title>
+</head>
+<body>
+    <h1>{{game_name}} 평점 및 후기 작성</h1>
+    <form method="POST">
+        <label for="rating">평점(0~100):</label>
+        <input type="number" id="rating" name="rating" min="0" max="100" value="{{ review_data[0] if review_data else ''}}"><br><br>
+        <label for="comment">후기:</label>
+        <input type="text" id="comment" name="comment" size="50"value="{{ review_data[1] if review_data else ''}}"><br><br>
+        <input type="submit" value="저장"><br>
+    </form>
+    <a href="/">처음으로</a><br>
+</body>
+</html>

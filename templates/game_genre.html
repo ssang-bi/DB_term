@@ -1,0 +1,27 @@
+<html>
+<head>
+    <title> 장르별 게임 목록</title>
+</head>
+<body>
+    <h1>{{template_name}} 장르 게임 구매 목록</h1>
+    <table border=1>
+        <thead>
+            <tr>
+                <th>이름</th>
+                <th>정가</th>
+                <th>제작사</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in item_list%}
+            <tr>
+                <td>{{i[0]}}</td>
+                <td>{{i[1]}}</td>
+                <td>{{i[2]}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="/">처음으로</a>
+</body>
+</html>

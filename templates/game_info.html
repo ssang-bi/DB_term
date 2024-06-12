@@ -1,0 +1,31 @@
+<html>
+<head>
+    <title>게임 정보</title>
+</head>
+<body>
+    <h1>{{game_name}} 게임 정보</h1>
+    <table border=1>
+        <thead>
+            <tr>
+                <th>이름</th>
+                <th>장르</th>
+                <th>정가</th>
+                <th>제작사</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in item_list%}
+            <tr>
+                <td>{{i[0]}}</td>
+                <td>{{i[1]}}</td>
+                <td>{{i[2]}}원</td>
+                <td>{{i[3]}}</td>
+            </tr>
+            {% endfor %}
+        </tbody><br>
+    </table>
+    <input type="button" value="삭제" onclick="location.href='/delete_game/{{game_id}}'">
+    <input type="button" value="평가하기" onclick="location.href='/game_review/{{game_name}}/{{game_id}}'">
+    <a href="/">처음으로</a>
+</body>
+</html>
